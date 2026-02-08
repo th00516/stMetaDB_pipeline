@@ -1,0 +1,1 @@
+cat ../dataList.l1.txt | while read p; do echo "Rscript ../.libexec/preprocessing.R ../1.spaceranger/outputs/$p $p ../3.post_filtering/outputs/${p}.post_filtered.rds $(grep -w $p ../../species.txt | awk -F '\t' '{print $2}')"; done

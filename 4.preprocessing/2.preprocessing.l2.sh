@@ -1,0 +1,1 @@
+cat ../dataList.l2.txt | while read p; do echo "Rscript ../.libexec/preprocessing.R ../1.spaceranger/outputs/$p $p ../2.gatk_pathseq/outputs/${p}.raw_matrix.rds $(grep -w $p ../../species.txt | awk -F '\t' '{print $2}')"; done
