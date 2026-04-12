@@ -53,7 +53,8 @@ obj@meta.data$percent.mt <- if (args[9] == "human") {
 
 obj <- subset(obj, subset = nCount_Spatial < 30 & nFeature_Spatial < 10)
 
-obj <- SCTransform(obj, vst.flavor = "v2", assay = "Spatial", vars.to.regress = "percent.mt")
+#obj <- SCTransform(obj, vst.flavor = "v2", assay = "Spatial", vars.to.regress = "percent.mt")
+obj <- SCTransform(obj, vst.flavor = "v2", assay = "Spatial")
 obj@misc$HVGs <- VariableFeatures(obj)
 
 ## SVGs ##
